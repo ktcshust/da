@@ -21,8 +21,8 @@ while cap.isOpened():
     lmList = detector.findPosition(img, False)
     # print(lmList)
     if len(lmList) != 0:
-        elbow = detector.findAngle(img, 11, 13, 15)
-        shoulder = detector.findAngle(img, 13, 11, 23)
+        elbow = detector.findAngle(img, 23, 25, 27)
+        shoulder = detector.findAngle(img, 11, 23, 25)
         hip = detector.findAngle(img, 11, 23, 25)
 
         # Percentage of success of pushup

@@ -32,7 +32,7 @@ while cap.isOpened():
         bar = np.interp(elbow, (90, 160), (380, 50))
 
         # Check to ensure right form before starting the program
-        if elbow > 160 and shoulder > 40 and hip > 160:
+        if elbow > 89 and shoulder > 40 and hip > 160:
             form = 1
 
         # Check for full range of motion for the pushup

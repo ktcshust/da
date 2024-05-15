@@ -26,19 +26,19 @@ while cap.isOpened():
         hip = detector.findAngle(img, 11, 23, 25)
 
         # Percentage of success of pushup
-        per = np.interp(elbow, (90, 160), (0, 100))
+        per = np.interp(elbow, (90, 60), (0, 100))
 
         # Bar to show Pushup progress
-        bar = np.interp(elbow, (90, 160), (380, 50))
+        bar = np.interp(elbow, (90, 60), (380, 50))
 
         # Check to ensure right form before starting the program
-        if elbow > 160 and shoulder > 40 and hip > 160:
+        if elbow < 60 and shoulder > 60:
             form = 1
 
         # Check for full range of motion for the pushup
         if form == 1:
             if per == 0:
-                if elbow <= 90 and hip > 160:
+                if elbow >= 90 and shoulder < 60:
                     feedback = "Up"
                     if direction == 0:
                         count += 0.5
@@ -47,7 +47,7 @@ while cap.isOpened():
                     feedback = "Fix Form"
 
             if per == 100:
-                if elbow > 160 and shoulder > 40 and hip > 160:
+                if elbow < 60 and shoulder < 60:
                     feedback = "Down"
                     if direction == 1:
                         count += 0.5
